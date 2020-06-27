@@ -15,15 +15,24 @@ struct ContentView: View {
     @State var circularProgress: Double = 0.0
     
     var body: some View {
-        Circular(progress: progress, animationTimeInterval: 0.1)
-            .padding()
-            .frame(width: 300, height: 300, alignment: .center)
-            .onReceive(timer) { (_) in
-                self.progress += 0.01
-                if self.progress >= 1 {
-                    self.timer.upstream.connect().cancel()
-                }
+        VStack(spacing: 50) {
+            Arc(progress: progress)
+            
+            Bar(progress: progress)
+            
+            
+            Circular(progress: progress)
+                .frame(width: 200, height: 200, alignment: .center)
+            
+            FilledCircle(radius: 100, progress: progress)
+        }
+        .padding()
+        .onReceive(timer) { (_) in
+            self.progress += 0.01
+            if self.progress >= 1 {
+                self.timer.upstream.connect().cancel()
             }
+        }
     }
     
 }
