@@ -1,5 +1,7 @@
 # Progress Indicator
 
+![Image](https://github.com/karthironald/ProgressIndicator/blob/master/Demo/Banner.gif)
+
 We don't have a native progress view in the initial release of SwiftUI which supports iOS 13. We need to write our custom logic to add loading or progress view indicators in the app. Here you can find the collection of simple progress view indicators.
 
 
