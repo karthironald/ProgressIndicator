@@ -24,10 +24,10 @@ struct Bar: View {
                     .animation(nil)
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(backgroundColor)
+                        .fill(self.backgroundColor)
                         .frame(width: geo.size.width, height: 20)
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(progressColor)
+                        .fill(self.progressColor)
                         .frame(width: (geo.size.width) * (self.progress), height: 15)
                         .animation(Animation.linear(duration: self.animationTimeInterval))
                 }

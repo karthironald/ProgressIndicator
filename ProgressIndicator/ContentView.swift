@@ -10,14 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var shouldAnimate: Bool = false
-    var timer = Timer.publish(every: 0.5, on: .main, in: .default).autoconnect()
+    var timer = Timer.publish(every: 0.1, on: .main, in: .default).autoconnect()
     @State var progress: CGFloat = 0.0
     @State var circularProgress: Double = 0.0
     
     var body: some View {
-        FilledCircle(radius: 50, progress: progress, animationTimeInterval: 0.5)
+        Circular(progress: progress, animationTimeInterval: 0.1)
             .padding()
+            .frame(width: 300, height: 300, alignment: .center)
             .onReceive(timer) { (_) in
                 self.progress += 0.01
                 if self.progress >= 1 {
